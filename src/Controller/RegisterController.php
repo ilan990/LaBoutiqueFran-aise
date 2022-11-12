@@ -22,12 +22,13 @@ class RegisterController extends AbstractController
         $user = new User();
         $form = $this->createForm(RegisterType::class,$user);
         $form->handleRequest($request);
-        $user = $form->getData();
-        $plaintextPassword = $user->getPassword();
+
 
 
         if ($form->isSubmitted() && $form->isValid())
         {
+            $user = $form->getData();
+            $plaintextPassword = $user->getPassword();
             //Hash le mot de passe avant l'entrée en base de données
             $hashedPassword = $encode->hashPassword(
                 $user,
