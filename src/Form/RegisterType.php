@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Length;
 
 class RegisterType extends AbstractType
 {
@@ -19,6 +20,7 @@ class RegisterType extends AbstractType
         $builder
             ->add('firstname',TextType::class,[
                 'label'=>'Prénom',
+                'constraints' => new length(10,2,30),
                 'attr' =>[
                     'placeholder'=>'Merci de renseigner votre prénom'
                 ]
