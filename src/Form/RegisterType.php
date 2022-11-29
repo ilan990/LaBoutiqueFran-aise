@@ -54,13 +54,7 @@ class RegisterType extends AbstractType
                     'placeholder'=>'Merci de confirmer votre mot de passe'
                 ]]
             ])
-        /*->add('password_confirm',PasswordType::class,[
-            'label'=>'Confirmer Mot de passe',
-            'mapped'=>false,
-            'attr' =>[
-                'placeholder'=>'Merci de confirmer votre mot de passe'
-            ]
-        ])*/
+
             ->add('submit',SubmitType::class,[
                 'label'=>"S'inscrire",
             ])
